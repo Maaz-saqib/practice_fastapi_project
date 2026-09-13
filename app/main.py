@@ -8,7 +8,10 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-origins = ["https://www.google.com"]  # Replace with your frontend URL in production
+origins = [
+    "https://www.google.com",
+    "http://localhost:5173", # Vite React Dev Server
+]  # Replace with your frontend URL in production
 # [*] means allow all origins, but it's not recommended for production
 # and you can also specify multiple origins in the list if needed.
 # but the best practice is to specify the exact origins that are allowed to access your API. like your frontend URL.
